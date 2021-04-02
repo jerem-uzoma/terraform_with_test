@@ -14,7 +14,7 @@ output "private_subnet_id" {
 }
 
 output "main_vpc_name" {
-  value       = aws_vpc.main.Name
+  value       = lookup(module.vpc.tags, "Name")
   description = "The VPC name"
 }
 output "main_vpc_cidr" {
